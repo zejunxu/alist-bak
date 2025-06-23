@@ -20,7 +20,7 @@ jobs:
       - name: 配置 HTTPS 推送
         run: |
           git config --global url."https://".insteadOf git://
-          git config --global url."https://".insteadOf git@gitee.com:
+          git config --global url."https://gitee.com/".insteadOf git@gitee.com:
           echo "GIT_SSH_COMMAND=ssh -o StrictHostKeyChecking=no" >> $GITHUB_ENV
         env:
           LANG: zh_CN.UTF-8
