@@ -17,6 +17,12 @@ jobs:
           echo "PIP_CACHE_DIR=/home/runner/.cache/pip" >> $GITHUB_ENV
         env:
           LANG: zh_CN.UTF-8
+      - name: 配置 HTTPS 推送
+        run: |
+          git config --global url."https://".insteadOf git://
+          git config --global url."https://".insteadOf git@gitee.com:
+        env:
+          LANG: zh_CN.UTF-8
       - uses: Yikun/hub-mirror-action@master
         with:
           src: github/zejunxu
@@ -28,6 +34,5 @@ jobs:
           debug: true
           timeout: "60m"
           api_timeout: "120"
-          ssh_key: ""  # 明确禁用 SSH，强制使用 HTTPS
         env:
           LANG: zh_CN.UTF-8
