@@ -28,6 +28,6 @@ jobs:
           debug: true
           timeout: "60m"
           api_timeout: "120"
-          ssh_key: ""
+          ssh_key: ""  # 明确禁用 SSH，强制使用 HTTPS
         env:
           LANG: zh_CN.UTF-8
