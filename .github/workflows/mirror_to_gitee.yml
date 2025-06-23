@@ -21,6 +21,7 @@ jobs:
         run: |
           git config --global url."https://".insteadOf git://
           git config --global url."https://".insteadOf git@gitee.com:
+          echo "GIT_SSH_COMMAND=ssh -o StrictHostKeyChecking=no" >> $GITHUB_ENV
         env:
           LANG: zh_CN.UTF-8
       - uses: Yikun/hub-mirror-action@master
